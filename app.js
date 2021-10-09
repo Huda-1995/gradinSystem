@@ -36,6 +36,26 @@ yargs.command({
        students.addStudent(argv.id,argv.name,argv.subject,argv.degree,argv.comments)
     }
 })
+
+//delete
+yargs.command({
+    command: 'delete',
+    describe: 'Delete students',
+     builder:{
+        id:{
+            describe:'this is student unique number',
+            demandOption: true,
+            type:'number' 
+        }
+
+    },
+    handler:(argv)=>{
+        students.removeStudent(argv.id)
+    }
+})
+
+
+
 //read
 yargs.command({
     command: 'read',
@@ -62,23 +82,6 @@ yargs.command({
        students.listStudents()
     }
 })
-//delete
-yargs.command({
-    command: 'delete',
-    describe: 'Delete students',
-     builder:{
-        id:{
-            describe:'this is student unique number',
-            demandOption: true,
-            type:'number' 
-        }
-
-    },
-    handler:(argv)=>{
-        students.removeStudent(argv.id)
-    }
-})
-
 
 
 yargs.parse();
