@@ -1,5 +1,5 @@
 const fs = require('fs')
-
+/////////add student
 const addStudent = (id,name,subject,degree,comments) => {
 
    const students = loadStudents()
