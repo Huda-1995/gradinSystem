@@ -21,14 +21,13 @@ else{
   console.log('duplicate id error');
 }
 }
-//////create array empty then push elements
+
 const loadStudents = () =>{
 
-    //const dataBuffer = fs.readFileSync('students.json').toString()//return array of json
-    //return JSON.parse(dataBuffer)//convert to object
+
     try{
-        const dataBuffer = fs.readFileSync('students.json').toString()//return array of json
-         return JSON.parse(dataBuffer)//convert to object
+        const dataBuffer = fs.readFileSync('students.json').toString()
+         return JSON.parse(dataBuffer)
     }
     catch(e){
         return []
@@ -36,8 +35,8 @@ const loadStudents = () =>{
 }
 
 const saveStudents = (students) =>{
-    const saveStudents= JSON.stringify(students)//convert to json
-     fs.writeFileSync('students.json',saveStudents)//create file and add data
+    const saveStudents= JSON.stringify(students)
+     fs.writeFileSync('students.json',saveStudents)
 
 }
 ////////remove student
@@ -50,7 +49,7 @@ const removeStudent = (id) =>{
     console.log('student removed')
 }
  
-/////// read //////////
+/////// read info//////////
 const readStudents=(id) =>{
     const students=loadStudents()
 
@@ -78,7 +77,7 @@ const listStudents=() =>{
         console.log(student.comments)
     })
 }
-////////////
+
 module.exports= {
     addStudent,
     removeStudent,
